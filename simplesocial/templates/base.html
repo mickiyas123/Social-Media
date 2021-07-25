@@ -1,0 +1,20 @@
+<!-- inherited by other html files -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Social</title>
+</head>
+<body>
+    <!-- part that won't be inherited in other html files -->
+    <div class="container">
+        {%  block content  %}
+        {%  endblock %}
+    </div>
+    
+
+</body>
+</html>
