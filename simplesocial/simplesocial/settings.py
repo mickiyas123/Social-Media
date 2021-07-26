@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts.apps.AccountsConfig'
+    # registering the webapp to the project
+    'accounts.apps.AccountsConfig',
+    # registering the bootstrap3
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
