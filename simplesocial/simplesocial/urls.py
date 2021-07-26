@@ -26,5 +26,9 @@ urlpatterns = [
     path('accounts',include('accounts.urls',namespace="accounts")),
     # a path for authorization purpose
     path('accounts',include('django.contrib.auth.urls')),
+    # a path for test view
+    path('test',views.Test.as_view(),name ='test'),
+    # a path for thankyou view
+    path('thankyou',views.ThankYou.as_view(),name='thanks')
 
 ]
