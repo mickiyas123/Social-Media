@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+from django.contrib.auth.views import logout_then_login
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # templates folder file location
@@ -127,3 +129,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # static folder file location
 STATICFILES_DIRS =[os.path.join(BASE_DIR,"static")]
+
+
+# login and logut redirect(pages to go to after login and logout)
+
+LOGIN_REDIRECT_URL = 'test'
+LOGOUT_REDIRECT_URL = 'thanks'
