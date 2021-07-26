@@ -11,7 +11,7 @@ app_name = 'accounts'
 
 urlpatterns = [
    # a path for login
-   path('login',auth_view.LoginView.as_view(template_name = 'accounts/login.htm'),name="login"),
+   path('login',auth_view.LoginView.as_view(template_name = 'accounts/login.html'),name="login"),
    # a path for logout
    path('logout',auth_view.LogoutView.as_view(),name="logout"),
    # a path for signing up
