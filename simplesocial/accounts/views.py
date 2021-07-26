@@ -14,6 +14,6 @@ class SignUp(CreateView):
     # connecting to te form
     form_class = forms.UserCreateForm
     # redirecting to login page after signup
-    success_url = 'login'
-    # connectin to template 
+    success_url = reverse_lazy('login')
+    # connecting to template 
     template_name = 'accounts/signup.html'

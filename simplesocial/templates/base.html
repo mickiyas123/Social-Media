@@ -36,8 +36,9 @@
                 <!-- Checking if the user is in the system -->
                 {% if user.is_authenticated %}
                 <!-- show this navbar -->
-                <li><a href="#">Groups</a></li>
                 <li><a href="#">Posts</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">Create Group</a></li>
                 <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
                 <!-- if user is not authenticated show this navbar -->

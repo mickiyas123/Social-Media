@@ -23,12 +23,12 @@ urlpatterns = [
     # a path for accessing home page view
     path('',views.HomePage.as_view(),name='home'),
     # a path for connecting the project and webapp
-    path('accounts',include('accounts.urls',namespace="accounts")),
+    path('accounts/',include('accounts.urls',namespace="accounts")),
     # a path for authorization purpose
-    path('accounts',include('django.contrib.auth.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
     # a path for test view
-    path('test',views.Test.as_view(),name ='test'),
+    path('test/',views.Test.as_view(),name ='test'),
     # a path for thankyou view
-    path('thankyou',views.ThankYou.as_view(),name='thanks')
+    path('thankyou/',views.ThankYou.as_view(),name='thanks')
 
 ]
