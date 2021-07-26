@@ -1,0 +1,18 @@
+<!-- Inheriting from base.html -->
+{% extends  'base.html' %}
+<!-- loading bootstrap3 -->
+{% load bootstrap3 %}
+
+<!-- not inherited -->
+{% block content %}
+<div class="container">
+<h1>Log In</h1>
+<form method="POST">
+    <!-- security measure -->
+    {% csrf_token %}
+    <!-- injecting the form  -->
+    {% bootstrap_form form %}
+    <input type="submit" value="Login" class="btn btn-default">
+</form>
+</div>
+{%  endblock %}
