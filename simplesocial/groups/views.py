@@ -11,10 +11,18 @@ from groups.models import Group,GroupMember
 # Create your views here.
 
 # class view for creating Posts 
-class CreatePost(LoginRequiredMixin,generic.CreateView):
+class CreateGropu(LoginRequiredMixin,generic.CreateView):
     # fields we want to edit
     fields = ('name','description')
     # connecting to the model Group
     model = Group
+
+# detail for single group
+class SingleGroup(generic.ListView):
+    model = Group
+
+# view for List Group
+class ListGroups(generic.ListView):
+    model = Group 
 
 
