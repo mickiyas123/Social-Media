@@ -7,11 +7,29 @@
 <h2>Member Count: {{group.members.count}}</h2>
  <!-- leave option if user is not in the group -->
    <div class="content">
+       <!-- checking if the user is in any group -->
        {% if user in group.members.all %}
+       <!-- displaying leave group option -->
        <a href="{% url 'groups:leave' slug=group.slug%}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
        {% else %}
+        <!-- displaying join group option -->
        <a href="{% url 'groups:join' slug=group.slug%}" class="btn btn-lg btn-fill btn-warning"><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
 
        {% endif %}
    </div>
+{% endblock %}
+<!-- displaying the posts in group -->
+{% block group_content %}
+<div class="col-md-8">4
+    <!-- checking the number of posts -->
+    {% if group.posts.count == 0 %}
+    <h2>No posts in this group</h2>
+    {% else %}
+     {% for post in group.posts.all %}
+     <!-- injecting html file -->
+      {% include "post/_post.html"  %}
+     {% endfor %}
+    {% endif %}
+</div>
+  
 {% endblock %}
