@@ -31,3 +31,17 @@ class UserPosts(generic.ListView):
     model = models.Post
     # connecting to the template
     template_name = 'posts/user_post_list.html'
+    
+    # checking if user exist and get posts related to that specific user
+    def get_queryset(self):
+        try:
+            self.post.user = User.objects.prefetch_related('posts').get(username__iexact = self.kwargs.get('username'))
+        except User.DoesNotExist:
+            raise Http404
+        else:
+            return self.post_user.posts.all()    
+    # context data object connected to the user
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post_user'] = self.post_user
+        return context   
