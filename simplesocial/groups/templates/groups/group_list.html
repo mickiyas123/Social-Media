@@ -1,0 +1,18 @@
+<!-- inheriting from group base html -->
+{% extends "groups/group_base.html" %}
+<!-- part that is not inherited -->
+{% block pregroup %}
+<div class="col-md-4">
+    <div class="content">
+        <!-- checking if user is authenticated -->
+        {% if user.is_authenticated %}
+        <!-- take you to all the list of your posts -->
+        <a href="{% url 'posts:for_user'  username=user.username%}">@{{user.username}}</a>
+        {% endif %}
+        <!-- list of all the group -->
+        <h2>Groups</h2>
+        <p>Welcome to the groups page!</p>
+
+    </div>
+</div>
+{% endblock %}
