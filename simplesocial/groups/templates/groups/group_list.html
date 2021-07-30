@@ -17,5 +17,6 @@
    {% if user.is_authenticated %}
    <!-- Button for creating group -->
    <a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign">Create New Group</span></a>
+   {% endif %}
 </div>
 {% endblock %}
