@@ -1,0 +1,16 @@
+<!-- inheriting from the base html file -->
+{% extends "base.html" %}
+
+<!-- this part is not inherited -->
+{% block content %}
+ <div class="container">
+     <div class="row">
+         {% block pregroup %}{% endblock %}
+         {% block group_content %}{% endblock %}
+         {% block postgroup %}{% endblock %}
+
+
+     </div>
+ </div>
+
+{% endblock %}
