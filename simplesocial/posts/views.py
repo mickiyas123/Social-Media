@@ -17,3 +17,10 @@ User = get_user_model()
 
 
 # Create your views here.
+
+# posts that belong to the a group
+class PostList(SelectRelatedMixin,generic.ListView):
+    # connecting to post model
+    model = models.Post
+    # foreign key for the post
+    select_related = ('user','group')
