@@ -12,7 +12,10 @@
         <!-- list of all the group -->
         <h2>Groups</h2>
         <p>Welcome to the groups page!</p>
-
-    </div>
+   </div>
+   <!-- checking if user is authenticated -->
+   {% if user.is_authenticated %}
+   <!-- Button for creating group -->
+   <a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign">Create New Group</span></a>
 </div>
 {% endblock %}
