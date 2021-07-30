@@ -1,0 +1,17 @@
+<!-- Inheriting from group base html-->
+{% extends "groups/group_base.html" %}
+<!-- loading bootstrap for the form -->
+{% load bootstrap3 %}
+<!-- content that is only in this file -->
+{% block group_content %}
+<h4>Create a new group!</h4>
+<!-- post method form -->
+<form action="{% url 'groups:create' %}" method="POST" id="groupForm">
+    <!-- security  -->
+    {% csrf_token %}
+    <!-- loading bootstrap specifcaly for form -->
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary btn-large" value="Create">
+
+</form>
+{% endblock %}
