@@ -24,3 +24,10 @@ class PostList(SelectRelatedMixin,generic.ListView):
     model = models.Post
     # foreign key for the post
     select_related = ('user','group')
+
+# list of posts a user created
+class UserPosts(generic.ListView):
+    # connecting to the model
+    model = models.Post
+    # connecting to the template
+    template_name = 'posts/user_post_list.html'
