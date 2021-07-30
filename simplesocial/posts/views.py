@@ -1,3 +1,5 @@
+from django.contrib.auth.signals import user_logged_in
+from django.db.models import query
 from django.shortcuts import render
 # importing mixins to check login
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -44,4 +46,17 @@ class UserPosts(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post_user'] = self.post_user
-        return context   
+        return context 
+
+# a view for displaying post detail
+class PostDetail(SelectRelatedMixin,generic.DetailView):
+    # connecting to the model
+    model = models.Post
+    # foreign key
+    select_related = ('user','group')
+    
+    # filtering username
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user__username__iexact = self.kwargs.get('username'))
+
