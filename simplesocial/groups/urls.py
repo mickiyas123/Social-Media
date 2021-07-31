@@ -13,7 +13,12 @@ urlpatterns = [
     # path for creating new group
     path('new/',views.CreateGroup.as_view(),name='Group'),
     # path for single group detail
-    url(r'posts/in/(?P<slug>[-\w]+)/',views.SingleGroup.as_view(),name="single")
+    url(r'posts/in/(?P<slug>[-\w]+)/',views.SingleGroup.as_view(),name="single"),
+    # path for joining a group
+    url(r'join/(?P<slug>[-\w]+)/$',views.joinGroup.as_view(),name='join'),
+    # path for leaving a group
+    url(r'leave/(?P<slug>[-\w]+)/$',views.LeaveGroup.as_view(),name='leave')
+    
     
 ]
 
