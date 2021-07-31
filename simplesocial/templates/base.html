@@ -36,13 +36,13 @@
                 <!-- Checking if the user is in the system -->
                 {% if user.is_authenticated %}
                 <!-- show this navbar -->
-                <li><a href="#">Posts</a></li>
-                <li><a href="#">Groups</a></li>
-                <li><a href="#">Create Group</a></li>
+                <li><a href="{% url 'posts:create' %}">Posts</a></li>
+                <li><a href="{% url groups:all %}">Groups</a></li>
+                <li><a href="{% url groups:create %}">Create Group</a></li>
                 <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
                 <!-- if user is not authenticated show this navbar -->
-                <li><a href="#">Groups</a></li>
+                <li><a href="groups:all">Groups</a></li>
                 <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                 <li><a href="{% url 'accounts:signup'  %}">Sign Up</a></li>
                 {% endif %}
