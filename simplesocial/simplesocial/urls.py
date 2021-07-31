@@ -29,6 +29,10 @@ urlpatterns = [
     # a path for test view
     path('test/',views.Test.as_view(),name ='test'),
     # a path for thankyou view
-    path('thankyou/',views.ThankYou.as_view(),name='thanks')
+    path('thankyou/',views.ThankYou.as_view(),name='thanks'),
+    # a path for posts webapp
+    path('posts',include('posts.urls' ,namespace="posts")),
+    # a path for groups webapp
+    path('groups',include('groups.urls' ,namespace="groups"))
 
 ]
