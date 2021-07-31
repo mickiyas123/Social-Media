@@ -8,7 +8,8 @@ from django.urls import reverse
 from django.views import generic
 # importing models of the group webapp
 from groups.models import Group,GroupMember
-from django.db import IntegrityError, models
+from django.db import IntegrityError
+from . import models
 
 # Create your views here.
 
