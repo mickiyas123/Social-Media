@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     # registering the webapp to the project
     'accounts.apps.AccountsConfig',
     # registering the bootstrap3
-    'bootstrap3'
+    'bootstrap3',
+    'groups',
+    'posts'
 ]
 
 MIDDLEWARE = [
